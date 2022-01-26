@@ -6,6 +6,7 @@ workflows:
       - name: Run benchmark
         script: |
           set -e # exit on first failed command
+          sudo chmod +x benchmark.sh
           ./benchmark.sh
     artifacts:
       - build/ios/*
