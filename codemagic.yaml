@@ -1,1 +1,12 @@
-
+workflows:
+  benchmark:
+    instance_type: mac_pro
+    environment:
+      xcode: 13.2.1
+    scripts:
+      - name: Run benchmark
+        script: |
+          set -e # exit on first failed command
+          ./benchmark.sh
+    artifacts:
+      - build/ios/*
